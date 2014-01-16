@@ -35,5 +35,5 @@ if (Piwik_IP::isIpInRange($visitorInfo['location_ip'], array('0.0.0.0/0'))) { $n
 
 ```bash
 cd /var/www/path/to/your/piwik/installation/plugins/
-git clone git://github.com/pklaus/IntranetSubNetwork.git
+git clone git://github.com/kwasib/IntranetSubNetwork.git
 ```
