@@ -1,21 +1,28 @@
 <?php
 /**
  * Piwik - Open source web analytics
- * 
- * @link https://github.com/pklaus/IntranetSubNetwork
- * @license http://www.gnu.org/licenses/gpl-3.0.html Gpl v3 or later
- * @package Piwik_IntranetSubNetwork
+ *
+ * @link http://piwik.org
+ * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
+ *
+ * @category Piwik_Plugins
+ * @package IntranetSubNetwork
  */
+namespace Piwik\Plugins\IntranetSubNetwork;
 
-class Piwik_IntranetSubNetwork_Controller extends Piwik_Controller 
-{	
-	/**
+use Piwik\Piwik;
+use Piwik\View;
+use Piwik\ViewDataTable\Factory;
+
+class Controller extends \Piwik\Plugin\Controller
+{
+	/*
 	 * IntranetSubNetwork
-	 */
-	function getIntranetSubNetwork($fetch = false)
+	*/ 
+	public function getIntranetSubNetwork($fetch = false)
 	{
-		$view = Piwik_ViewDataTable::factory();
-		$view->init( $this->pluginName, __FUNCTION__, "IntranetSubNetwork.getIntranetSubNetwork" );
+		
+		$view = Factory::build( $this->pluginName, "IntranetSubNetwork.getIntranetSubNetwork", $this->pluginName . '.' . __FUNCTION__ );
 	
 		$this->setPeriodVariablesView($view);
 		$column = 'nb_visits';
@@ -23,13 +30,16 @@ class Piwik_IntranetSubNetwork_Controller extends Piwik_Controller
 		$percColName = 'General_ColumnPercentageVisits';
 		if($view->period == 'day')
 			$column = 'nb_uniq_visitors';
-		$view->setColumnsToDisplay( array('label',$percCol,$column) );
-		$view->setColumnTranslation('label', Piwik_Translate('IntranetSubNetwork_ColumnIntranetSubNetwork'));
-		$view->setColumnTranslation($percCol, str_replace('% ', '%&nbsp;', Piwik_Translate($percColName)));
-		$view->setSortedColumn( $percCol );
-		$view->setLimit( 5 );
-		return $this->renderView($view, $fetch);
+		$view->config->columns_to_display = array('label',$percCol,$column);
+		$view->config->addTranslation('label', Piwik::translate('IntranetSubNetwork_ColumnIntranetSubNetwork'));
+		$view->config->addTranslation($percCol, str_replace('% ', '%&nbsp;', Piwik::translate($percColName)));
+		$view->config->show_bar_chart = false;
+		$view->config->show_tag_cloud = false;
+		$view->requestConfig->filter_sort_column = $percCol;
+		$view->requestConfig->filter_id = 5;
+
+		return $view->render();
 	}
 	
+	
 }
-

@@ -1,0 +1,7 @@
+{
+		"IntranetSubNetwork": {
+			"WidgetIntranetSubNetwork": "Besucher Netzwerke",
+			"WidgetIntranetSubNetworkDocumentation": "Netzwerke, aus dem die Besucher die Seite aufriefen. Das kann etwa IPv4 oder IPv6 sein, oder detaillierter, abhängig von den Netzwerken in Ihrem Intranet.",
+			"ColumnIntranetSubNetwork": "Netzwerk Name"
+		}
+}

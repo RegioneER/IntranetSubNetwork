@@ -1,0 +1,8 @@
+{
+ "name": "IntranetSubNetwork",
+ "version": "0.6.0",
+ "description": "Assigns network names to the visitors according to their IP.",
+ "author": "Kwasi Brown (Philipp Klaus, orig: Alain)",
+ "homepage": "https://github.com/kwasib/IntranetSubNetwork",
+ "theme": false
+}

@@ -1,16 +1,20 @@
 <?php
 /**
  * Piwik - Open source web analytics
- * 
- * @link https://github.com/pklaus/IntranetSubNetwork
- * @license http://www.gnu.org/licenses/gpl-3.0.html Gpl v3 or later
- * 
- * @package Piwik_IntranetSubNetwork
+ *
+ * @link http://piwik.org
+ * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
+ *
+ * @category Piwik_Plugins
+ * @package IntranetSubNetwork
  */
+namespace Piwik\Plugins\IntranetSubNetwork;
 
-function Piwik_getSubnetName($in)
+use Piwik\Piwik;
+
+function getSubnetName($in)
 {
 	if(empty($in))
-		return Piwik_Translate('General_Unknown');
+		return Piwik::Translate('General_Unknown');
 	return $in;
 }
