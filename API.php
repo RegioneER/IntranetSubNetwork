@@ -35,15 +35,13 @@ class API extends \Piwik\Plugin\API
         $dataTable->filter('Sort', array(Metrics::INDEX_NB_VISITS));
         $dataTable->queueFilter('ColumnCallbackReplace', array('label',  __NAMESPACE__ . '\getSubnetName'));
         $dataTable->queueFilter('ReplaceColumnNames');
-        //$dataTable->queueFilter('ReplaceSummaryRowLabel');
 
         $column = 'nb_visits';
         $percCol = 'nb_visits_percentage';
         $percColName = 'General_ColumnPercentageVisits';
 
         $visitsSums = $archive->getNumeric($column);
-        //$visitsSum = Piwik_VisitsSummary_API::getInstance()->getVisits($idSite, $period, $date);
-        //print_r($visitsSums);
+
         // check whether given tables are arrays
         if($dataTable instanceof DataTable\Map) {
             $tableArray = $dataTable->getArray();

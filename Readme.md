@@ -19,7 +19,7 @@ any IPv4 visitors:
 
 ```php
 <?php
-if (Piwik_IP::isIpInRange($visitorInfo['location_ip'], array('0.0.0.0/0'))) { $networkName = 'Global IPv4'; }
+if (IP::isIpInRange($visitorInfo['location_ip'], array('0.0.0.0/0')))     { $networkName = 'Global IPv4'; }
 ?>
 ````
 
