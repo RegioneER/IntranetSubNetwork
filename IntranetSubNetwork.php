@@ -26,7 +26,6 @@ class IntranetSubNetwork extends \Piwik\Plugin
     public function getListHooksRegistered()
     {
         return array(
-            'AssetManager.getJavaScriptFiles'   => 'getJsFiles',
             'Tracker.newVisitorInformation'     => 'logIntranetSubNetworkInfo',
             'WidgetsList.addWidgets'            => 'addWidget',
             'API.getReportMetadata'             => 'getReportMetadata',
@@ -65,11 +64,6 @@ class IntranetSubNetwork extends \Piwik\Plugin
             'sqlSegment' => 'log_visit.location_IntranetSubNetwork'
         );
     }  
-
-    public function getJsFiles(&$jsFiles)
-    {
-        $jsFiles[] = 'plugins/IntranetSubNetwork/javascripts/plugin.js';
-    }
 
     public function install()
     {
