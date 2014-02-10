@@ -2,7 +2,9 @@
  "name": "IntranetSubNetwork",
  "version": "0.6.0",
  "description": "Assigns network names to the visitors according to their IP.",
- "author": "Kwasi Brown (Philipp Klaus, orig: Alain)",
+ "keywords": ["Subnet", "Intranet", "IPv4", "IPv6"],
+ "license": "GPL v3+",
  "homepage": "https://github.com/kwasib/IntranetSubNetwork",
+ "authors": [{"name": "Kwasi Brown", "homepage": "https://github.com/kwasib"}, {"name":"Philipp Klaus", "homepage": "http://blog.philippklaus.de/2012/04/piwik-plugin-intranetsubnetwork-show-ipv4-vs-ipv6-statistics/"}, {"name": "Alain", "homepage": "http://forum.piwik.org/profile.php?3,1398"}],
  "theme": false
 }

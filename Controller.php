@@ -34,6 +34,7 @@ class Controller extends \Piwik\Plugin\Controller
 		$view->config->addTranslation('label', Piwik::translate('IntranetSubNetwork_ColumnIntranetSubNetwork'));
 		$view->config->addTranslation($percCol, str_replace('% ', '%&nbsp;', Piwik::translate($percColName)));
 		$view->config->show_bar_chart = false;
+		$view->config->show_pie_chart = false;
 		$view->config->show_tag_cloud = false;
 		$view->requestConfig->filter_sort_column = $percCol;
 		$view->requestConfig->filter_id = 5;
