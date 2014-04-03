@@ -11,6 +11,7 @@
 namespace Piwik\Plugins\IntranetSubNetwork;
 
 use Piwik\Archive;
+use Piwik\DataTable;
 use Piwik\Metrics;
 use Piwik\Piwik;
 
@@ -60,6 +61,12 @@ class API extends \Piwik\Plugin\API
                         $visitsSumTotal = (float)$visits;
                 }
             }
+
+            // Skip aggregation of percentages when AddSummaryRow is called.
+            $columnAggregationOps = $table->getMetadata(DataTable::COLUMN_AGGREGATION_OPS_METADATA_NAME);
+            $columnAggregationOps[$percCol] = 'skip';
+            $table->setMetadata(DataTable::COLUMN_AGGREGATION_OPS_METADATA_NAME, $columnAggregationOps);
+
 
             $table->filter('ColumnCallbackAddColumnPercentage', array($percCol, Metrics::INDEX_NB_VISITS, $visitsSumTotal, 1));
             // we don't want <0% or >100%:
