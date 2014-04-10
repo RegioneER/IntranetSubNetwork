@@ -1,6 +1,6 @@
 {
  "name": "IntranetSubNetwork",
- "version": "0.6.0",
+ "version": "0.6.1",
  "description": "Assigns network names to the visitors according to their IP.",
  "keywords": ["Subnet", "Intranet", "IPv4", "IPv6"],
  "license": "GPL v3+",
