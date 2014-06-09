@@ -56,7 +56,7 @@ class API extends \Piwik\Plugin\API
             foreach($visitSumsArray AS $k => $visits) {
                 if($k == $key) {
                     if(is_object($visits))
-                        $visitsSumTotal = (float)$visits->getFirstRow()->getColumn(0);
+                        $visitsSumTotal = (float)$visits->getFirstRow()->getColumn($column);
                     else
                         $visitsSumTotal = (float)$visits;
                 }
