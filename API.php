@@ -41,12 +41,12 @@ class API extends \Piwik\Plugin\API
         $percCol = 'nb_visits_percentage';
         $percColName = 'General_ColumnPercentageVisits';
 
-        $visitsSums = $archive->getNumeric($column);
+        $visitsSums = $archive->getDataTableFromNumeric($column);
 
         // check whether given tables are arrays
         if($dataTable instanceof DataTable\Map) {
-            $tableArray = $dataTable->getArray();
-            $visitSumsArray = $visitsSums->getArray();
+            $tableArray = $dataTable->getDataTables();
+            $visitSumsArray = $visitsSums->getDataTables();
         } else {
             $tableArray = Array($dataTable);
             $visitSumsArray = Array($visitsSums);
