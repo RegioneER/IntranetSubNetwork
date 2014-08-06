@@ -15,7 +15,7 @@ use Piwik\Metrics;
 class Archiver extends \Piwik\Plugin\Archiver
 {
     const INTRANETSUBNETWORK_RECORD_NAME = 'IntranetSubNetwork_networkNameExt';
-    const INTRANETSUBNETWORK_FIELD = "location_IntranetSubNetwork";
+    const INTRANETSUBNETWORK_FIELD = "location_subnetwork";
 
     public function aggregateMultipleReports()
     {

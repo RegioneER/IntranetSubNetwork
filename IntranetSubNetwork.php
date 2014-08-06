@@ -61,14 +61,14 @@ class IntranetSubNetwork extends \Piwik\Plugin
             'name' => Piwik::translate('IntranetSubNetwork_ColumnIntranetSubNetwork'),
             'segment' => 'subnetwork',
             'acceptedValues' => 'Global IPv4, Global IPv6 etc.',
-            'sqlSegment' => 'log_visit.location_IntranetSubNetwork'
+            'sqlSegment' => 'log_visit.location_subnetwork'
         );
     }  
 
     public function install()
     {
 	// add column location_IntranetSubNetwork in the visit table
-	$query = "ALTER IGNORE TABLE `" . Common::prefixTable('log_visit') . "` ADD `location_IntranetSubNetwork` VARCHAR( 100 ) NULL";
+	$query = "ALTER IGNORE TABLE `" . Common::prefixTable('log_visit') . "` ADD `location_subnetwork` VARCHAR( 100 ) NULL";
 		
 	// if the column already exist do not throw error. Could be installed twice...
 	try {
@@ -83,7 +83,7 @@ class IntranetSubNetwork extends \Piwik\Plugin
     public function uninstall()
     {
 	    // remove column location_IntranetSubNetwork from the visit table
-	    $query = "ALTER TABLE `" . Common::prefixTable('log_visit') . "` DROP `location_IntranetSubNetwork`";
+	    $query = "ALTER TABLE `" . Common::prefixTable('log_visit') . "` DROP `location_subnetwork`";
 	    Db::exec($query);
     }
 
@@ -110,10 +110,10 @@ class IntranetSubNetwork extends \Piwik\Plugin
         if (IP::isIpInRange($visitorInfo['location_ip'], array('::/0')))          { $networkName = 'Global IPv6'; } // IPv6 addresses
         if (IP::isIpInRange($visitorInfo['location_ip'], array('::ffff:0:0/96'))) { $networkName = 'Global IPv4'; } // IPv4 mapped IPv6 addresses
         // You may include your custom subnets:
-        //if (Piwik_IP::isIpInRange($visitorInfo['location_ip'], array('141.2.0.0/16')))         { $networkName = 'University Frankfurt'; }
-        //if (Piwik_IP::isIpInRange($visitorInfo['location_ip'], array('192.0.2.0/24')))         { $networkName = 'TEST-NET'; }
-        //if (Piwik_IP::isIpInRange($visitorInfo['location_ip'], array('198.51.100.0/24')))   { $networkName = 'TEST-NET-2'; } 
-        //if (Piwik_IP::isIpInRange($visitorInfo['location_ip'], array('2001:db8::/33', 
+        //if (IP::isIpInRange($visitorInfo['location_ip'], array('141.2.0.0/16')))         { $networkName = 'University Frankfurt'; }
+        //if (IP::isIpInRange($visitorInfo['location_ip'], array('192.0.2.0/24')))         { $networkName = 'TEST-NET'; }
+        //if (IP::isIpInRange($visitorInfo['location_ip'], array('198.51.100.0/24')))   { $networkName = 'TEST-NET-2'; } 
+        //if (IP::isIpInRange($visitorInfo['location_ip'], array('2001:db8::/33', 
         //                                                             '2001:db8:8000::/33'))) { $networkName = 'Doc-IPv6'; }
         /**
          ******************* end adopt here to your subnets *****************************************
@@ -121,7 +121,7 @@ class IntranetSubNetwork extends \Piwik\Plugin
          **/
 
         // add the IntranetSubNetwork value in the table log_visit
-        $visitorInfo['location_IntranetSubNetwork'] = substr($networkName, 0, 100);
+        $visitorInfo['location_subnetwork'] = substr($networkName, 0, 100);
     }
 	
 }

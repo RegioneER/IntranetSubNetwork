@@ -37,3 +37,10 @@ if (IP::isIpInRange($visitorInfo['location_ip'], array('0.0.0.0/0')))     { $net
 cd /var/www/path/to/your/piwik/installation/plugins/
 git clone git://github.com/kwasib/IntranetSubNetwork.git
 ```
+#### Upgrade Notes
+
+As of v0.7.0, the name of the database column which stores the network category name has changed.    To update previous installs, run the following:
+
+```bash
+ALTER TABLE piwik_log_visit CHANGE location_IntranetSubNetwork location_subnetwork varchar(100);
+```
