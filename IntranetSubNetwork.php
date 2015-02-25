@@ -98,7 +98,6 @@ class IntranetSubNetwork extends \Piwik\Plugin
     public function logIntranetSubNetworkInfo(&$visitorInfo)
     {
                 
-        // $ip = IP::N2P($visitorInfo['location_ip']);
         $ip = Network\IP::fromBinaryIP($visitorInfo['location_ip']);
         // by default, we want the network name to be the IP address:
         $networkName = $ip;
