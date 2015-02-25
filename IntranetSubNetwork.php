@@ -14,7 +14,7 @@ use Exception;
 
 use Piwik\Common;
 use Piwik\Db;
-use Piwik\IP;
+use Piwik\Network;
 use Piwik\Piwik;
 use Piwik\WidgetsList;
 
@@ -98,7 +98,8 @@ class IntranetSubNetwork extends \Piwik\Plugin
     public function logIntranetSubNetworkInfo(&$visitorInfo)
     {
                 
-        $ip = IP::N2P($visitorInfo['location_ip']);
+        // $ip = IP::N2P($visitorInfo['location_ip']);
+        $ip = Network\IP::fromBinaryIP($visitorInfo['location_ip']);
         // by default, we want the network name to be the IP address:
         $networkName = $ip;
         /**
@@ -106,14 +107,14 @@ class IntranetSubNetwork extends \Piwik\Plugin
          ****************** adopt the following lines according to your subnets **********************
          **/
         // Some default subnets:
-        if (IP::isIpInRange($visitorInfo['location_ip'], array('0.0.0.0/0')))     { $networkName = 'Global IPv4'; } // all IPv4 addresses
-        if (IP::isIpInRange($visitorInfo['location_ip'], array('::/0')))          { $networkName = 'Global IPv6'; } // IPv6 addresses
-        if (IP::isIpInRange($visitorInfo['location_ip'], array('::ffff:0:0/96'))) { $networkName = 'Global IPv4'; } // IPv4 mapped IPv6 addresses
+        if ($ip->isInRanges(array('0.0.0.0/0')))     { $networkName = 'Global IPv4'; } // all IPv4 addresses
+        if ($ip->isInRanges(array('::/0')))          { $networkName = 'Global IPv6'; } // IPv6 addresses
+        if ($ip->isInRanges(array('::ffff:0:0/96'))) { $networkName = 'Global IPv4'; } // IPv4 mapped IPv6 addresses
         // You may include your custom subnets:
-        //if (IP::isIpInRange($visitorInfo['location_ip'], array('141.2.0.0/16')))         { $networkName = 'University Frankfurt'; }
-        //if (IP::isIpInRange($visitorInfo['location_ip'], array('192.0.2.0/24')))         { $networkName = 'TEST-NET'; }
-        //if (IP::isIpInRange($visitorInfo['location_ip'], array('198.51.100.0/24')))   { $networkName = 'TEST-NET-2'; } 
-        //if (IP::isIpInRange($visitorInfo['location_ip'], array('2001:db8::/33', 
+        //if $ip->isInRanges(array('141.2.0.0/16')))         { $networkName = 'University Frankfurt'; }
+        //if $ip->isInRanges(array('192.0.2.0/24')))         { $networkName = 'TEST-NET'; }
+        //if $ip->isInRanges(array('198.51.100.0/24')))   { $networkName = 'TEST-NET-2'; } 
+        //if $ip->isInRanges(array('2001:db8::/33', 
         //                                                             '2001:db8:8000::/33'))) { $networkName = 'Doc-IPv6'; }
         /**
          ******************* end adopt here to your subnets *****************************************
