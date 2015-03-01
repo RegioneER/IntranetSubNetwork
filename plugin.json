@@ -6,5 +6,8 @@
  "license": "GPL v3+",
  "homepage": "https://github.com/kwasib/IntranetSubNetwork",
  "authors": [{"name": "Kwasi Brown", "homepage": "https://github.com/kwasib"}, {"name":"Philipp Klaus", "homepage": "http://blog.philippklaus.de/2012/04/piwik-plugin-intranetsubnetwork-show-ipv4-vs-ipv6-statistics/"}, {"name": "Alain", "homepage": "http://forum.piwik.org/profile.php?3,1398"}],
+"require": {
+        "piwik": ">=2.9.0"
+    },
  "theme": false
 }
