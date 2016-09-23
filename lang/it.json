@@ -1,0 +1,7 @@
+{
+    "IntranetSubNetwork": {
+    "WidgetIntranetSubNetwork": "Reti dei visitatori",
+        "WidgetIntranetSubNetworkDocumentation": "La rete privata da cui i visitatori provengono",
+        "ColumnIntranetSubNetwork": "Nome della rete"
+    }
+}
