@@ -28,7 +28,7 @@
     }
   ],
   "require": {
-    "piwik": ">=2.9.0"
+    "piwik": ">=2.16.0"
   },
   "theme": false
 }
