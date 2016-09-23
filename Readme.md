@@ -21,6 +21,8 @@ any IPv4 visitors:
 if ($ip->isInRanges(array('0.0.0.0/0')))     { $networkName = 'Global IPv4'; }
 ```
 
+Until now there's any documentation available, just an article from Philips Klaus on its blog: <https://blog.philippklaus.de/2012/04/piwik-plugin-intranetsubnetwork-show-ipv4-vs-ipv6-statistics/>
+
 ### Installation
 
 1. Create the folder `./IntranetSubNetwork` in the plugins folder of your Piwik installation.  
