@@ -1,4 +1,4 @@
-# Regione Emilia-Romagna 's IntranetSubNetwork Piwik Plugin
+# IntranetSubNetwork Piwik Plugin by Regione Emilia-Romagna
 
 This project forked the Piwik's plugin *IntranetSubNetwork* from 
 <https://github.com/kwasib/IntranetSubNetwork>, 
