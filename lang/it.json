@@ -1,7 +1,9 @@
 {
     "IntranetSubNetwork": {
-    "WidgetIntranetSubNetwork": "Reti dei visitatori",
+        "WidgetIntranetSubNetwork": "Reti dei visitatori",
         "WidgetIntranetSubNetworkDocumentation": "La rete privata da cui i visitatori provengono",
-        "ColumnIntranetSubNetwork": "Nome della rete"
+        "ColumnIntranetSubNetwork": "Nome della rete",
+        "SettingsSubnetworksTitle" : "Elenco delle sottoreti",
+        "SettingsSubnetworksDescription": "Occorre elencare uno per riga i range di sottoreti e relativo nome"
     }
 }

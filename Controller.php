@@ -1,13 +1,5 @@
 <?php
-/**
- * Piwik - Open source web analytics
- *
- * @link http://piwik.org
- * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
- *
- * @category Piwik_Plugins
- * @package IntranetSubNetwork
- */
+
 namespace Piwik\Plugins\IntranetSubNetwork;
 
 use Piwik\Piwik;
@@ -16,14 +8,13 @@ use Piwik\ViewDataTable\Factory;
 
 class Controller extends \Piwik\Plugin\Controller
 {
+
 	/*
 	 * IntranetSubNetwork
 	*/ 
 	public function getIntranetSubNetwork($fetch = false)
 	{
-		
 		$view = Factory::build( $this->pluginName, "IntranetSubNetwork.getIntranetSubNetwork", $this->pluginName . '.' . __FUNCTION__ );
-	
 		$this->setPeriodVariablesView($view);
 		$column = 'nb_visits';
 		$percCol = 'nb_visits_percentage';
@@ -41,6 +32,5 @@ class Controller extends \Piwik\Plugin\Controller
 
 		return $view->render();
 	}
-	
 	
 }

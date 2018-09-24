@@ -1,34 +1,40 @@
 {
-  "name": "IntranetSubNetwork",
-  "version": "0.8",
-  "description": "Assigns network names to the visitors according to their IP.",
-  "keywords": ["subnet", "network", "intranet", "IPv4", "IPv6"],
-  "license": "GPL v3+",
-  "homepage": "https://github.com/kwasib/IntranetSubNetwork",
-  "authors": [
-    {
-      "name": "Kwasi Brown",
-      "homepage": "https://github.com/kwasib"
+    "name": "IntranetSubNetwork",
+    "version": "1.0.0",
+    "description": "Assigns network names to the visitors according to their IP.",
+    "keywords": [
+        "subnet",
+        "network",
+        "intranet",
+        "IPv4",
+        "IPv6"
+    ],
+    "license": "GPL v3+",
+    "homepage": "https:\/\/github.com\/RegioneER\/IntranetSubNetwork",
+    "authors": [
+        {
+            "name": "Kwasi Brown",
+            "homepage": "https:\/\/github.com\/kwasib"
+        },
+        {
+            "name": "Philipp Klaus",
+            "homepage": "http:\/\/blog.philippklaus.de\/2012\/04\/piwik-plugin-intranetsubnetwork-show-ipv4-vs-ipv6-statistics\/"
+        },
+        {
+            "name": "Alain",
+            "homepage": "http:\/\/forum.piwik.org\/profile.php?3,1398"
+        },
+        {
+            "name": "Tassoman",
+            "homepage": "https:\/\/github.com\/tassoman"
+        },
+        {
+            "name": "Regione Emilia-Romagna",
+            "homepage": "https:\/\/RegioneER.github.io"
+        }
+    ],
+    "require": {
+        "piwik": ">=3.0.4-rc2,<4.0.0-b1"
     },
-    {
-      "name": "Philipp Klaus",
-      "homepage": "http://blog.philippklaus.de/2012/04/piwik-plugin-intranetsubnetwork-show-ipv4-vs-ipv6-statistics/"
-    },
-    {
-      "name": "Alain",
-      "homepage": "http://forum.piwik.org/profile.php?3,1398"
-    },
-    {
-      "name": "Tassoman",
-      "homepage": "https://github.com/tassoman"
-    },
-    {
-      "name": "Regione Emilia-Romagna",
-      "homepage": "https://RegioneER.github.io"
-    }
-  ],
-  "require": {
-    "piwik": ">=2.16.0"
-  },
-  "theme": false
+    "theme": false
 }

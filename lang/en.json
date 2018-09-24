@@ -1,7 +1,11 @@
 {
-	"IntranetSubNetwork": {
-		"WidgetIntranetSubNetwork": "Visitor Networks",
-		"WidgetIntranetSubNetworkDocumentation": "The networks users came from. This might be IPv4, IPv6 or more elaborate analysis depending on the subnets of your intranet.",
-		"ColumnIntranetSubNetwork": "Network Name"
-	}
+    "IntranetSubNetwork": {
+        "WidgetIntranetSubNetwork": "Visitor Networks",
+        "WidgetIntranetSubNetworkDocumentation": "The networks users came from. This might be IPv4, IPv6 or more elaborate analysis depending on the subnets of your intranet.",
+        "ColumnIntranetSubNetwork": "Network Name",
+        "IntranetSubNetwork": "Intranet SubNetwork",
+        "IntranetSubnetworkReport": "Intranet Subnetwork Report",
+        "SettingsSubnetworksTitle" : "Elenco delle sottoreti",
+        "SettingsSubnetworksDescription": "Occorre elencare i range di subnetwork nel formato <pre>0.0.0.0/0|Nome della sottorete</pre>"
+    }
 }
